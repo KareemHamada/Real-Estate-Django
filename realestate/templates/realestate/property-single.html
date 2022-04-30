@@ -1,0 +1,129 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+  <main id="main">
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">{{building.type}}</h1>
+              <span class="color-text-a">{{building.address}}</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section><!-- End Intro Single-->
+
+    <!-- ======= Property Single ======= -->
+    <section class="property-single nav-arrow-b">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div id="property-single-carousel" class="swiper">
+              <div class="swiper-wrapper">
+                <div class="carousel-item-b swiper-slide">
+                  <img src="{{building.image1.url}}" alt="">
+                </div>
+                {% if building.image2 != None %}
+                  <div class="carousel-item-b swiper-slide">
+                    <img src="{{building.image2.url}}" alt="">
+                  </div>
+                  {% if building.image3 != None %}
+                    <div class="carousel-item-b swiper-slide">
+                      <img src="{{building.image3.url}}" alt="">
+                    </div>
+                {% if building.image4 != None %}
+                  <div class="carousel-item-b swiper-slide">
+                    <img src="{{building.image4.url}}" alt="">
+                  </div>
+                {% if building.image5 != None %}
+                  <div class="carousel-item-b swiper-slide">
+                    <img src="{{building.image5.url}}" alt="">
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+
+            
+            <div class="property-single-carousel-pagination carousel-pagination"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+
+            <div class="row justify-content-between">
+              <div class="col-md-5 col-lg-4">
+                
+                <div class="property-summary">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="title-box-d section-t4">
+                        <h3 class="title-d">Quick Summary</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="summary-list">
+                    <ul class="list">
+                      <li class="d-flex justify-content-between">
+                        <strong>Property ID:</strong>
+                        <span>{{building.id}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Location:</strong>
+                        <span>{{building.address}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Property Type:</strong>
+                        <span>{{building.type}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Status:</strong>
+                        <span>{{building.forwhat}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Area:</strong>
+                        <span>{{building.area}}m
+                          <sup>2</sup>
+                        </span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Rooms:</strong>
+                        <span>{{building.rooms}}</span>
+                      </li>
+                      <li class="d-flex justify-content-between">
+                        <strong>Baths:</strong>
+                        <span>{{building.bathroom}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7 col-lg-7 section-md-t3">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="title-box-d">
+                      <h3 class="title-d">Property Description</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="property-description">
+                  <p class="description color-text-a">
+                   {{building.description}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section><!-- End Property Single-->
+
+  </main><!-- End #main -->
+
+{% endblock content %}

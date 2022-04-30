@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container form-create">
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <select name="selectbuilding" class="form-select" id="selectBuilding" onchange="chooseBuilding()">
+                <option value="shaga">شقة</option>
+                <option value="mahal">محل</option>
+                <option value="omara">عمارة</option>
+                <option value="vela">فيلا</option>
+                <option value="shaleh">شالية</option>
+                <option value="duplex">دولكس</option>
+                <option value="studio">استوديو</option>
+            </select>
+        </div>
+        <div class="input-group mb-3" id="forwhat">
+            <select class="form-select" name="forwhat">
+                <option value="2">للبيع</option>
+                <option value="1">للايجار</option>
+            </select>
+        </div>
+        <div class="mb-3" id="area">
+            <label for="exampleInputArea" class="form-label">Area</label>
+            <input type="number" class="form-control" id="exampleInputArea" name="area">
+        </div>
+        <div class="mb-3" id="price">
+            <label for="exampleInputPrice" class="form-label">Price</label>
+            <input type="number" class="form-control" id="exampleInputPrice" name="price">
+        </div>
+        
+        <div class="mb-3" id="address">
+            <label for="exampleInputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="exampleInputAddress" name="address">
+        </div>
+        <div class="input-group mb-3" id="image">
+            <input type="file" class="form-control" id="inputGroupFile02" name="images" multiple>
+            <label class="input-group-text" for="inputGroupFile02">Images</label>
+        </div>
+        <div class="input-group" id="description">
+            <span class="input-group-text">Description</span>
+            <textarea style="height:100px;" class="form-control" aria-label="Description" name="description"></textarea>
+        </div>
+        <div class="mb-3" id="room">
+            <label for="exampleInputRoom" class="form-label">Room</label>
+            <input type="number" class="form-control" id="exampleInputRoom" name="rooms">
+        </div>
+        <div class="mb-3" id="bathroom">
+            <label for="exampleInputBathroom" class="form-label">Bathroom</label>
+            <input type="number" class="form-control" id="exampleInputBathroom" name="bathroom">
+        </div>  
+        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+    </form>
+</div>
+
+{% endblock content %}
